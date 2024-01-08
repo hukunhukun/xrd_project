@@ -1,4 +1,21 @@
 /* style.css */
+.user-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.bot-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* 样式化图标的颜色和其他属性，根据需要进行修改 */
 
 #chat-container {
     width: 80%;

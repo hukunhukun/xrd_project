@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ChatGPT 对话</title>
+    <title>Chat 对话</title>
     <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 <body>
@@ -9,42 +9,44 @@
         <div id="chat">
             <div id="messages">
                 <div class="message">
+                    <div class="user-icon">👤</div>
                     <p class="user-message">你好</p>
                 </div>
                 <div class="message">
+                    <div class="bot-icon">🤖</div>
                     <p class="bot-message">你好！有什么我可以帮助你的吗？</p>
                 </div>
+                
                 <!-- 添加更多对话消息 -->
             </div>
-            <div id="user-input">
-                <input type="text" id="user-input-text" placeholder="输入消息...">
-                <button id="send-button">发送</button>
-            </div>
+            <form id="user-input-form">
+                <input type="text" id="user-input-text" placeholder="Message...">
+                <button id="send-button">send</button>
+            </form>
+            
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#send-button').click(function() {
-                // 保留原有的输出功能，将用户输入消息添加到 #messages 中
-
+            $('#user-input-form').submit(function(event) {
+                event.preventDefault(); // 阻止表单提交的默认行为
                 var user_input = $('#user-input-text').val();
-                $('#messages').append('<p><strong>你：</strong>' + user_input + '</p>');
-
+                $('#messages').append('<div class="message"> <div class="user-icon">👤</div> <p class="user-message">' + user_input + '</p> </div>');
+    
                 $.ajax({
                     type: 'POST',
                     url: '/ask',
                     data: { user_input: user_input },
                     success: function(data) {
-                        // 保留原有的输出功能，将机器人回复添加到 #messages 中
-
-                        $('#messages').append('<p><strong>robot：</strong>' + data.response + '</p>');
+                        $('#messages').append('<div class="message"> <div class="bot-icon">🤖</div> <p class="bot-message">' + data.response + '</p> </div>');
                         $('#user-input-text').val('');
                     }
                 });
             });
         });
     </script>
+    
 </body>
 </html>
