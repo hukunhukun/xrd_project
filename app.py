@@ -34,7 +34,6 @@ def process(input_:str):
     return output
 
 
-
 @app.route('/')
 def index():
     return render_template('index.html')

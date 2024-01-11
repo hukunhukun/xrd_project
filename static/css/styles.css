@@ -8,7 +8,6 @@
     vertical-align: middle;
     font-size: 14px; /* 减小字体大小 */
 }
-
 .bot-icon::before {
     content: 'Agent';
     display: inline-block;

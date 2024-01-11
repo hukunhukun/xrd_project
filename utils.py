@@ -51,6 +51,3 @@ def robot_out(log_dir:str):
 
     return messages
 
-
-
-# robot_out('./static/log/PretrainMXRDM.txt')
