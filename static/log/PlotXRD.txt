@@ -1,0 +1,3 @@
+INFO:root:assistant: PlotXRD caoqian/cif/NaCl.cif
+INFO:root:user: Success! Already save into ../user_data/caoqian/cif/NaCl_plot.png.
+INFO:root:assistant: STOP

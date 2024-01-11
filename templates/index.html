@@ -10,11 +10,11 @@
             <div id="messages">
                 <div class="message">
                     <div class="user-icon">👤</div>
-                    <p class="user-message">你好</p>
+                    <p class="user-message">hello</p>
                 </div>
                 <div class="message">
                     <div class="bot-icon">🤖</div>
-                    <p class="bot-message">你好！有什么我可以帮助你的吗？</p>
+                    <p class="bot-message">hello！How can I help you?</p>
                 </div>
                 
                 <!-- 添加更多对话消息 -->
@@ -40,7 +40,23 @@
                     url: '/ask',
                     data: { user_input: user_input },
                     success: function(data) {
-                        $('#messages').append('<div class="message"> <div class="bot-icon">🤖</div> <p class="bot-message">' + data.response + '</p> </div>');
+                        var output = data.output;
+
+                        for (var i = 0; i < output.length; i++) {
+                            var element = output[i];
+                            var type = element.type;
+                            var content = element.content;
+
+                            if (type === 'text') {
+                                // 处理文本元素
+                                $('#messages').append('<div class="message"> <div class="bot-icon">🤖</div> <p class="bot-message">' + content + '</p> </div>');
+                            } else if (type === 'image') {
+                                // 处理图像元素
+                                $('#messages').append('<div class="message"> <div class="bot-icon">🤖</div> <img src="data:image/png;base64,' + content + '" alt="generate image"> </div>');
+                            }
+                            // 可以根据其他类型的元素扩展处理逻辑...
+                        }
+
                         $('#user-input-text').val('');
                     }
                 });

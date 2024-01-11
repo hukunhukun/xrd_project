@@ -1,56 +1,61 @@
 /* style.css */
-.user-icon {
+.user-icon::before {
+    content: 'You';
     display: inline-block;
-    width: 24px;
-    height: 24px;
-    font-size: 20px;
+    font-weight: bold;
     margin-right: 10px;
+    color: #007bff;
+    vertical-align: middle;
+    font-size: 14px; /* 减小字体大小 */
 }
 
-.bot-icon {
+.bot-icon::before {
+    content: 'Agent';
     display: inline-block;
-    width: 24px;
-    height: 24px;
-    font-size: 20px;
+    font-weight: bold;
     margin-right: 10px;
+    color: #5cb85c;
+    vertical-align: middle;
+    font-size: 14px; /* 减小字体大小 */
 }
-
-/* 样式化图标的颜色和其他属性，根据需要进行修改 */
 
 #chat-container {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
-    background-color: #f2f2f2;
     padding: 20px;
+    background-color: transparent;
 }
 
 #chat {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    background-color: transparent;
 }
 
 .message {
-    padding: 10px;
-    margin: 5px;
+    margin-bottom: 2px; /* 进一步减小对话框之间的底部间距 */
+    overflow: hidden;
 }
 
 .user-message {
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
+    color: #007bff;
     padding: 10px;
-    display: inline-block;
-    max-width: 70%;
+    max-width: 80%;
+    font-size: 14px; /* 减小字体大小 */
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
 }
 
 .bot-message {
-    background-color: #eee;
-    color: #000;
-    border-radius: 5px;
+    color: #5cb85c;
     padding: 10px;
-    display: inline-block;
-    max-width: 70%;
+    max-width: 80%;
+    font-size: 14px; /* 减小字体大小 */
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
 }
 
 #user-input {
@@ -61,8 +66,8 @@
     width: 80%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 16px;
+    border-radius: 15px;
+    font-size: 14px; /* 减小字体大小 */
 }
 
 #send-button {
@@ -70,7 +75,7 @@
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 3px;
-    font-size: 16px;
+    border-radius: 15px;
+    font-size: 14px; /* 减小字体大小 */
     cursor: pointer;
 }
