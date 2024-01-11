@@ -52,7 +52,7 @@
                                 $('#messages').append('<div class="message"> <div class="bot-icon">🤖</div> <p class="bot-message">' + content + '</p> </div>');
                             } else if (type === 'image') {
                                 // 处理图像元素
-                                $('#messages').append('<div class="message"> <div class="bot-icon">🤖</div> <img src="data:image/png;base64,' + content + '" alt="generate image"> </div>');
+                                $('#messages').append('<div class="message"> <div class="bot-icon">🤖</div> <img src="data:image/png;base64,' + content + '" alt="generate image" width="500" height="300"> </div>');
                             }
                             // 可以根据其他类型的元素扩展处理逻辑...
                         }

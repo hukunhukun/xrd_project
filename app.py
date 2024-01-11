@@ -20,9 +20,7 @@ def process(input_:str):
         output.append({'type': 'image', 'content': base64_encoded})
         output.append({'type': 'text', 'content': lines[-1]})
 
-    elif input_ == "I need to execute the first stage of pretraining using MXRDM on the file caoqian/data/GeneratedData.csv.":
-                    # Please save the pretrained model at caoqian/model/classi_mxrdm.pt. \
-                    # The specified parameters are: CUDA, layers, heads, epoch, seed, hidden units, vocabulary size, and batch size, with values 2, 2, 8, 2, 1200, 512, 74, 32 respectively.":
+    elif input_ == "I need to execute the first stage of pretraining using MXRDM on the file caoqian/data/GeneratedData.csv. Please save the pretrained model at caoqian/model/classi_mxrdm.pt. The specified parameters are: CUDA, layers, heads, epoch, seed, hidden units, vocabulary size, and batch size, with values 2, 2, 8, 2, 1200, 512, 74, 32 respectively.":
         lines = robot_out('./static/log/PretrainMXRDM.txt')
         loss_fig = visual_loss('./static/log/PretrainMXRDM.txt')
         for line in lines:
